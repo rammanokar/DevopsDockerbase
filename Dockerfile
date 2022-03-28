@@ -1,8 +1,12 @@
 FROM alpine:latest
-CMD apk update
-CMD apk add sudo shadow net-tools telnet busybox-extras kubectl helm py3-pip vim fish
-CMD adduser -D admin -G wheel admin
-CMD echo "admin:admin" | chpasswd
-USER ram
+
+RUN apk update 
+RUN apk add sudo shadow net-tools busybox-extras busybox-extras py3-pip vim fish curl wget openssh
+RUN pip install awscli 
+RUN adduser -D admin -G wheel admin
+RUN echo "admin:admin" | chpasswd
+RUN  echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+USER admin
+
 ENTRYPOINT ["usr/bin/fish"]
 
