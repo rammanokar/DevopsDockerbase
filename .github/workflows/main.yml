@@ -2,13 +2,13 @@
 name: ci
 on:
   push:
-    branches:
-      - 'main'
+    # branches:
+    #   - 'main'
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - 'main'
+  # pull_request:
+  #   branches:
+  #     - 'main'
 
 jobs:
   docker:
