@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: oruprogrammer/devopsbasen
+          images: oruprogrammer/devopsbase
           dockerfile: Dockerfile    
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
