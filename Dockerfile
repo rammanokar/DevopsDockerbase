@@ -8,5 +8,5 @@ RUN apk update && \
     echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER admin
 
-ENTRYPOINT ["usr/bin/fish"]
+ENTRYPOINT ["/usr/bin/fish"]
 
